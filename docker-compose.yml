@@ -1,0 +1,13 @@
+version: '3'
+services:
+  snahal:
+    build:
+      context: ./project
+      dockerfile: dockerfile
+    command: bash
+    stdin_open: true
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ../source/:/source
