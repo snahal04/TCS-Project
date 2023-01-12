@@ -26,4 +26,93 @@ If you don't have ubuntu or virtual machine then use AWS and host a temprory ubu
 5. Follow [this steps](https://asf.alaska.edu/how-to/data-recipes/connect-to-your-ec2-instance-using-putty-v1-1/) and open ubuntu terminal.
 
 Now open FileZilla and connect the instance 
-[Filezilla]: 
+
+
+<img src="https://github.com/snahal04/TCS-Project/blob/main/images/Filezilla.png" alt="drawing" style="width:600px; height:400px;"/>
+
+## Install Docker in Ubuntu
+
+1. Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+```ubuntu
+sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+2. Add Docker’s official GPG key:
+
+```ubuntu
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+3. Use the following command to set up the repository:
+
+```ubuntu
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+### Install Docker Engine
+
+```ubuntu
+sudo apt-get update
+```
+
+Install Docker Engine, containerd, and Docker Compose.
+
+``` ubuntu
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin 
+```
+
+Verify that the Docker Engine installation is successful by running the `hello-world` image:
+
+```ubuntu
+sudo docker run hello-world
+```
+
+## Upload the Dockerfile 
+
+* Download this Repo and unzip it. 
+* Open and connect the FileZilla
+* Search for `/home/ubuntu` directory
+* Drag the repo file in the same directory
+
+## Run the Image
+
+Open ubuntu terminal using Putty and run the command
+
+```ubuntu
+docker build ./TCS-Project
+```
+
+It will take few minutes to complete the installation
+
+#### Install eclipse IDE
+
+```ubuntu 
+sudo snap install --classic eclipse
+```
+
+Run Ethereum Client go 
+
+``` ubuntu
+sudo docker pull ethereum/client-go && \
+sudo docker run -it -p 30303:30303 ethereum/client-go
+```
+
+To exit press Ctrl + c
+
+#### All Set Thanks.
+
+
+
+
+
+
+
