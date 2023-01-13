@@ -106,7 +106,7 @@ sudo docker pull ethereum/client-go && \
 sudo docker run -it -p 30303:30303 ethereum/client-go
 ```
 
-To exit press Ctrl + c
+To exit or stop press Ctrl + c
 
 #### All Set Thanks.
 
